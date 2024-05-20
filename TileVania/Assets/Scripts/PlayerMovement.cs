@@ -159,7 +159,6 @@ public class PlayerMovement : MonoBehaviour
     }
     void Shoot()
     {
-        Debug.Log("here");
         Vector3 shootDirection = Input.mousePosition;
         shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
         shootDirection.z = 0f;
@@ -169,7 +168,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Fire1") && timer > fireTime)
         {
-            Debug.Log("foo");
             shootDirection.Normalize();
             GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
